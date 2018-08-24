@@ -1,7 +1,3 @@
-folder=my_gists
-mkdir $folder 2>/dev/null
-cd $folder
-
 data=`curl -s 'https://api.github.com/users/pacome35220/gists'`
 
 urls=$(echo $data | jq -r .[].files | jq -r .[].raw_url)
