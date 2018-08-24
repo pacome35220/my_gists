@@ -1,4 +1,4 @@
-data=`curl -s 'https://api.github.com/users/pacome35220/gists'`
+data="$(curl -s 'https://api.github.com/users/pacome35220/gists')"
 
 urls=$(echo $data | jq -r .[].files | jq -r .[].raw_url)
 descriptions=$(echo $data | jq -r .[].description)
@@ -9,7 +9,7 @@ do
     tmp=$IFS
     IFS=''
 
-    gist=`curl -s $url`
+    gist="$(curl -s $url)"
 
     filename=$(echo $url | cut -f8 -d /)
 
