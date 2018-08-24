@@ -11,7 +11,7 @@ urls_arr=($urls)
 descriptions=$(echo $data | jq -r .[].description)
 nb_comments=$(echo $data | jq -r .[].comments)
 
-for url in "${urls_arr}"
+for url in "${urls_arr[@]}"
 do
 	echo $url
     gist="$(curl -s $url)"
@@ -24,5 +24,5 @@ do
     echo $gist > $subfolder/$filename
 
     IFS=$tmp
-    echo -e "\e[033m" $filename : "\e[32m" DONE "\n"
+    echo -e "\e[033m" $filename : "\e[32m" DONE "\e[0m\n"
 done
