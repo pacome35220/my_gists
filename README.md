@@ -1,1 +1,1 @@
-# Migration : gist.github.com -> github.com
+# Import : gist.github.com -> github.com
