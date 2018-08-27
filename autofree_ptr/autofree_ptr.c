@@ -34,5 +34,5 @@ int main(void)
 	__attribute__((cleanup(destroy))) struct test *t = init(23);
 
 	print_data(t);
-	return 0; // no memory leaks                                                          
+	return 0; // no memory leaks
 }

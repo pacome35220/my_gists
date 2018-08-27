@@ -30,7 +30,6 @@ do
 	echo "$gist" > "$subfolder"/"$filename" # write code
 	if [ "${nb_comments[index]}" -ne 0 ]
 	then
-	    echo "${comments_urls[index]}"
 	    comment="$(curl -s ${comments_urls[index]})"
 	    comment_body="$(echo $comment | jq -r .[].body)"
 	    echo -e "---------------\n\n" >> "$subfolder/README.md"
