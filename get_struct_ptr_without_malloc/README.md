@@ -1,6 +1,9 @@
 Many libC functions return a pointer to a structure allocated in the stack, with a static keyword, to avoid malloc.
 ---------------
 
+### https://gist.github.com/38cff048a386fff6f6cdac7d6239d319
+---------------
+
 
 It's not a good practice, but you can do the same with a buffer, to avoid malloc.
 

@@ -1,6 +1,9 @@
 A simple combination of time(), localtime_r() and snprintf() to get the current time.
 ---------------
 
+### https://gist.github.com/d216cd65ee388e8c11957e3f71de4a2a
+---------------
+
 
 To simply get the current date + time :
 

@@ -1,6 +1,9 @@
 Implementation of a "high-level" snprintf() function
 ---------------
 
+### https://gist.github.com/45cde300627787d66a4536120fe18760
+---------------
+
 
 ```C
 int main()

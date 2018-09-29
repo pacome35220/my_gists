@@ -1,6 +1,9 @@
 A use case of ioctl() to get the size (in character) of the current terminal
 ---------------
 
+### https://gist.github.com/69515e2eb57a087b962f46190e909634
+---------------
+
 
 A mysterious legend says that there are two variables in the `struct winsize`  [definition](https://github.com/lattera/glibc/blob/master/bits/ioctl-types.h#L69) in glibc, which represents the pixel size of the terminal.
 
