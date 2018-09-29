@@ -26,14 +26,19 @@ do
 	subfolder="${filename::-2}" # remove ".c"
 	mkdir "$subfolder" 2>/dev/null # create directory for each gist
 
-	echo "${descriptions[index]}" > "$subfolder/README.md" # write gist description
+	readme="$subfolder/README.md"
+
+	echo "${descriptions[index]}" > "$readme" # write gist description
+	echo -e "---------------\n" >> "$readme"
+	echo -n "### " >> "$readme" # url will be h3 in markdown
+	echo "$data" | jq -r .["$index"].html_url >> "$readme" # write url to gist.github.com
 	echo "$gist" > "$subfolder"/"$filename" # write code
 	if [ "${nb_comments[index]}" -ne 0 ]
 	then
 	    comment="$(curl -s ${comments_urls[index]})"
 	    comment_body="$(echo $comment | jq -r .[].body)"
-	    echo -e "---------------\n\n" >> "$subfolder/README.md"
-	    echo "$comment_body" >> "$subfolder/README.md"
+	    echo -e "---------------\n\n" >> "$readme"
+	    echo "$comment_body" >> "$readme" # write comments if there are any
 	fi
 
 	echo -e "\e[033m" "$filename" : "\e[32m" DONE "\e[0m\n"
