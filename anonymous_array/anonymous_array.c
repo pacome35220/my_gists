@@ -1,6 +1,6 @@
-#include "stdio.h"
+#include <stdio.h>
 
-int sample_function(int *ptr)
+int foo(int *ptr)
 {
   printf("%d\n", *ptr);
 }
@@ -10,8 +10,8 @@ int main()
   // Using a variable;
   int hello_i_m_useless = 123;
 
-  sample_function(&hello_i_m_useless);
+  foo(&hello_i_m_useless);
   // Using anonymous arrays
-  sample_function((int[]){123});
+  foo((int[]){123});
   return 0;
 }
