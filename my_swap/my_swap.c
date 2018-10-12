@@ -3,13 +3,13 @@
 
 // This should work on all primitive besides float.
 
-#define swap(type, x, y) do {			\
-    x = (type)((uintptr_t)x ^ (uintptr_t)y);	\
-    y = (type)((uintptr_t)y ^ (uintptr_t)x);	\
-    x = (type)((uintptr_t)x ^ (uintptr_t)y);	\
+#define swap(x, y) do {					\
+    x = (typeof(x))((uintptr_t)x ^ (uintptr_t)y);	\
+    y = (typeof(x))((uintptr_t)y ^ (uintptr_t)x);	\
+    x = (typeof(x))((uintptr_t)x ^ (uintptr_t)y);	\
   } while (0)
 
-#define swap2(type, x, y) (x = (type)((uintptr_t)x + (uintptr_t)y - (uintptr_t)(y = x)))
+#define swap2(x, y) (x = (typeof(x))((uintptr_t)x + (uintptr_t)y - (uintptr_t)(y = x)))
 
 int main()
 {
@@ -17,8 +17,8 @@ int main()
   char *bar = "bar";
 
   printf("foo: %s, bar: %s\n", foo, bar);
-  swap(char *, foo, bar);
+  swap(foo, bar);
   printf("foo: %s, bar: %s\n", foo, bar);
-  swap2(char *, foo, bar);
+  swap2(foo, bar);
   printf("foo: %s, bar: %s\n", foo ,bar);
 }
