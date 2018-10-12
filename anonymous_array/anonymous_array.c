@@ -7,12 +7,11 @@ void foo(int *ptr)
 
 int main()
 {
-	// Using a variable;                                                                                                                                                                        
+	// Using a variable;
 	int hello_i_m_useless = 123;
 
 	foo(&hello_i_m_useless);
-	// Using anonymous arrays                                                                                                                                                                   
+	// Using anonymous arrays
 	foo((int[]){123});
 	return 0;
 }
-
