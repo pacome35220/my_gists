@@ -9,8 +9,6 @@
     x = (typeof(x))((uintptr_t)x ^ (uintptr_t)y);	\
   } while (0)
 
-#define swap2(x, y) (x = (typeof(x))((uintptr_t)x + (uintptr_t)y - (uintptr_t)(y = x)))
-
 int main()
 {
   char *foo = "foo";
@@ -18,7 +16,5 @@ int main()
 
   printf("foo: %s, bar: %s\n", foo, bar);
   swap(foo, bar);
-  printf("foo: %s, bar: %s\n", foo, bar);
-  swap2(foo, bar);
   printf("foo: %s, bar: %s\n", foo ,bar);
 }
