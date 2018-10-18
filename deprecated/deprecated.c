@@ -10,7 +10,7 @@
 void foo() __attribute__((deprecated));
 
 void foo()
-{	write(1, "foo\n", strlen("foo\n"));;
+{	write(1, "foo\n", strlen("foo\n"));
 }
 
 /*
